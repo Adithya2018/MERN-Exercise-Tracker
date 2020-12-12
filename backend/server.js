@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');  // this will help us to connect to mongoDB database
 const cors = require('cors');
-const path = require('path');
 
 require('dotenv').config();
 
@@ -26,15 +25,7 @@ const userRouter = require('./routes/users');
 app.use('/exercises', exerciseRouter);
 app.use('/users', userRouter);
 
-// serve static assets if in productiion
-if(process.env.NODE_ENV === 'production'){
-    // set static folder
-    app.use(express.static('../frontend/mern-exercise-tracker/build'));
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '..','frontend','mern-exercise-tracker','build','index.html'));
-    });
-}
 
 const port = process.env.PORT || 5000;
 
