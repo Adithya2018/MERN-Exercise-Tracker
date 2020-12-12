@@ -6,7 +6,6 @@ require('dotenv').config();
 
 // Express server
 const app = express();
-const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -25,6 +24,10 @@ const userRouter = require('./routes/users');
 
 app.use('/exercises', exerciseRouter);
 app.use('/users', userRouter);
+
+
+
+const port = process.env.PORT || 5000;
 
 // now let's start the server
 app.listen(port, () => {
