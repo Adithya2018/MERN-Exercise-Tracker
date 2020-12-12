@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix ../frontend/mern-exercise-tracker && npm run build --prefix ../frontend/mern-exercise-tracker" 
   },
   "keywords": [],
-  "author": "",
+  "author": "Adithya2018",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
